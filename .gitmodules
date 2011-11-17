@@ -1,0 +1,3 @@
+[submodule "library/Svs"]
+	path = library/Svs
+	url = git://github.com/mychiara/Svs.git
