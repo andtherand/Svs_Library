@@ -14,7 +14,7 @@ class Svs_Service_ServiceTest	extends Svs_Test
 	protected function setUp()
 	{
 		$this->_service = $this->getMockForAbstractClass(
-			'Svs_Model_Service_Abstract'		
+			'Svs_Service_Abstract'		
 		);
 		
 		$this->_mMapper = $this->getMockForAbstractClass(
@@ -68,7 +68,15 @@ class Svs_Service_ServiceTest	extends Svs_Test
 		
 		$this->assertInstanceOf('Zend_Form', $form);
 		
-	}	
+		try {
+			$service->setForm('Does_Form_NotExist');
+			
+		} catch(Svs_Model_Exception $e){
+			$this->assertContains('does not exist', $e->getMessage());
+		}
+		
+	}
+			
 	
 	//-------------------------------------------------------------------------
 	// - PRIVATE
