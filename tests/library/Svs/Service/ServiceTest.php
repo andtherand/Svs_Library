@@ -1,6 +1,6 @@
 <?php
     
-class Svs_Model_Service_ServiceTest	extends Svs_Test 
+class Svs_Service_ServiceTest	extends Svs_Test 
 {
 	//-------------------------------------------------------------------------
 	// - VARS
